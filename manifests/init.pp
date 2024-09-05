@@ -307,6 +307,9 @@
 # @param docker_msft_provider_version
 #   The version of the Microsoft Docker Provider Module
 #
+# @param curl_ensure
+#   Whether or not the curl package is ensured by this module.
+#
 # @param docker_ce_start_command
 # @param docker_ce_package_name
 # @param docker_ce_cli_package_name
@@ -467,6 +470,7 @@ class docker (
   Optional[Boolean]                       $service_hasrestart                = $docker::params::service_hasrestart,
   Optional[Variant[String,Array]]         $registry_mirror                   = $docker::params::registry_mirror,
   Boolean                                 $acknowledge_unsupported_os        = false,
+  Boolean                                 $curl_ensure                       = $docker::params::curl_ensure,
 
   # Windows specific parameters
   Optional[String]                        $docker_msft_provider_version      = $docker::params::docker_msft_provider_version,
